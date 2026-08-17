@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 30% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 30% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 30% 12%;
+    --primary: 20 85% 41%;
+    --primary-foreground: 30 40% 98%;
+    --secondary: 30 20% 96%;
+    --secondary-foreground: 20 30% 12%;
+    --muted: 30 20% 96%;
+    --muted-foreground: 20 9% 46%;
+    --accent: 30 20% 96%;
+    --accent-foreground: 20 30% 12%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 30 40% 98%;
+    --border: 20 13% 91%;
+    --input: 20 13% 91%;
+    --ring: 20 85% 41%;
+    --radius: 0.5rem;
+
+    --sidebar-background: 20 55% 16%;
+    --sidebar-foreground: 30 40% 96%;
+    --sidebar-primary: 30 40% 98%;
+    --sidebar-primary-foreground: 20 55% 16%;
+    --sidebar-accent: 20 45% 24%;
+    --sidebar-accent-foreground: 30 40% 98%;
+    --sidebar-border: 20 45% 22%;
+    --sidebar-ring: 30 40% 90%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+}
+
+/* --- App-level styles (shared table/card/form look, unrelated to the sidebar) --- */
+
+.app-shell { display: flex; min-height: 100vh; }
+.main-area { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid hsl(var(--border));
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.content { padding: 24px; }
+
+.card {
+  background: #fff;
+  border: 1px solid hsl(var(--border));
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.card-grid .card h3 { margin: 0 0 8px; font-size: 13px; color: #667; text-transform: uppercase; }
+.card-grid .card p { margin: 0; font-size: 28px; font-weight: 600; }
+
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid hsl(var(--border)); font-size: 14px; }
+th { background: #fafbfd; font-weight: 600; }
+
+.btn {
+  display: inline-block;
+  background: hsl(var(--primary));
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+}
+.btn.secondary { background: #6b7280; }
+.btn.danger { background: #b91c1c; }
+
+.toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 13px; margin-bottom: 4px; font-weight: 500; }
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid hsl(var(--border));
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.login-page {
+  display: flex; align-items: center; justify-content: center; min-height: 100vh;
+}
+.login-box { width: 340px; background: #fff; padding: 30px; border-radius: 10px; border: 1px solid hsl(var(--border)); }
+
+.error-text { color: #b91c1c; font-size: 13px; margin-top: 8px; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 12px; }
+.badge.active { background: #dcfce7; color: #166534; }
+.badge.overdue { background: #fee2e2; color: #991b1b; }
+.badge.returned { background: #e5e7eb; color: #374151; }
