@@ -1,19 +1,17 @@
 const { getConfig } = require("../core/config");
 
 // Simple module registry: to add a new module, add one entry here.
-// The "restaurant" module isn't built yet (that's Phase 2) - once its
-// route files exist, uncomment the entry below.
 const MODULE_MAP = {
-  // "restaurant": {
-  //   routes: {
-  //     "menu-items": "./restaurant/menuItem.routes",
-  //     tables: "./restaurant/table.routes",
-  //     payments: "./restaurant/payment.routes",
-  //     orders: "./restaurant/order.routes",
-  //   },
-  //   nav: "./restaurant/nav",
-  //   mountPath: "/api/restaurant",
-  // },
+  restaurant: {
+    routes: {
+      "menu-items": "./restaurant/menuItem.routes",
+      tables: "./restaurant/table.routes",
+      payments: "./restaurant/payment.routes",
+      orders: "./restaurant/order.routes",
+    },
+    nav: "./restaurant/nav",
+    mountPath: "/api/restaurant",
+  },
 };
 
 // Mounts every enabled module's routes on the Express app, and returns
